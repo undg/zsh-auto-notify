@@ -14,7 +14,7 @@
     git_version="$(git tag --list | sort -V | tail -1)"
     git tag --list
 
-    load "../auto-notify.plugin.zsh"
+    load "../zsh-auto-notify.plugin.zsh"
 
     assert "$AUTO_NOTIFY_VERSION" is_not_empty
     assert "$AUTO_NOTIFY_VERSION" same_as "$git_version"
@@ -25,7 +25,7 @@
         return 1
     }
 
-    run load "../auto-notify.plugin.zsh"
+    run load "../zsh-auto-notify.plugin.zsh"
 
     assert "$lines[1]" same_as "'notify-send' must be installed for zsh-auto-notify to work"
     assert "$lines[2]" same_as "Please install it with your relevant package manager"
@@ -35,7 +35,7 @@
         return 1
     }
 
-    load "../auto-notify.plugin.zsh"
+    load "../zsh-auto-notify.plugin.zsh"
 
     assert "_auto_notify_track" not_in $preexec_functions
     assert "_auto_notify_send" not_in $precmd_functions
@@ -43,14 +43,14 @@
 
 
 @test 'hook functions are loaded by default' {
-    load "../auto-notify.plugin.zsh"
+    load "../zsh-auto-notify.plugin.zsh"
 
     assert '_auto_notify_track' in $preexec_functions
     assert '_auto_notify_send' in $precmd_functions
 }
 
 @test 'enable/disable auto-notify' {
-    load "../auto-notify.plugin.zsh"
+    load "../zsh-auto-notify.plugin.zsh"
 
     disable_auto_notify
     assert '_auto_notify_track' not_in $preexec_functions
