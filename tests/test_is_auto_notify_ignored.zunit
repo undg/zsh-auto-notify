@@ -1,7 +1,7 @@
 #!/usr/bin/env zunit
 
 @setup {
-    load "../zsh-auto-notify.plugin.zsh"
+    load "../auto-notify.plugin.zsh"
 }
 
 @test 'is_auto_notify_ignored - commands outside AUTO_NOTIFY_IGNORE' {

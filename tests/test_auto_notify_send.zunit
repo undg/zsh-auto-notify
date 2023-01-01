@@ -1,7 +1,7 @@
 #!/usr/bin/env zunit
 
 @setup {
-    load "../zsh-auto-notify.plugin.zsh"
+    load "../auto-notify.plugin.zsh"
 
     function notify-send {
         echo - "Notification Title: $1"
