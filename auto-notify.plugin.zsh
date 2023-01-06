@@ -21,6 +21,8 @@ export AUTO_NOTIFY_VERSION="0.8.0"
         'htop'
         'ssh'
         'nano'
+        'gg'
+        'lazygit'
     )
 
 function _auto_notify_format() {
